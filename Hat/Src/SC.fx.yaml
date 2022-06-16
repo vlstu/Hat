@@ -1,0 +1,339 @@
+SC As screen:
+    BackgroundImage: =PX000183
+    ImagePosition: =ImagePosition.Fill
+
+    Label7_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =96
+        Size: =28
+        Text: ="Свой выбор сделал человек, великолепен будет век, заполни форму и ступай, от счастья память не теряй!"
+        Width: =1366
+        ZIndex: =1
+
+    Label9_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =84
+        OnSelect: =Navigate(General)
+        Size: =50
+        Text: ="SC"
+        Width: =123
+        Y: =684
+        ZIndex: =4
+
+    SCFORM As form:
+        AcceptsFocus: =false
+        DataSource: =SpecAct
+        Fill: =RGBA(56, 96, 178, 1)
+        Height: =172
+        Width: =1366
+        Y: =375
+        ZIndex: =5
+
+        Date_DataCard2_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Date"
+            Default: =ThisItem.Date
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Date"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =187
+            MaxLength: =DataSourceInfo([@SpecAct], DataSourceInfo.MaxLength, "Date")
+            Required: =false
+            Update: =DataCardValue5_3.Text
+            Width: =455
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey5_3 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(56, 96, 178, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5_3 As text:
+                Align: =Align.Center
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Now()
+                DelayOutput: =true
+                DisplayMode: =DisplayMode.View
+                Height: =107
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =395
+                X: =30
+                Y: =DataCardKey5_3.Y + DataCardKey5_3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5_3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5_3.Y + DataCardValue5_3.Height
+                ZIndex: =3
+
+            StarVisible5_3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_3.Y
+                ZIndex: =4
+
+        Name_DataCard2_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Name"
+            Default: =ThisItem.Name
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Name"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@SpecAct], DataSourceInfo.MaxLength, "Name")
+            Required: =true
+            Update: =DataCardValue6_3.Text
+            Width: =455
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey6_3 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(56, 96, 178, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue6_3 As text:
+                Align: =Align.Center
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =User().FullName
+                DelayOutput: =true
+                DisplayMode: =DisplayMode.View
+                Height: =106
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =395
+                X: =30
+                Y: =DataCardKey6_3.Y + DataCardKey6_3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6_3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue6_3.Y + DataCardValue6_3.Height
+                ZIndex: =3
+
+            StarVisible6_3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey6_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey6_3.Y
+                ZIndex: =4
+
+        Role_DataCard2_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Role"
+            Default: =ThisItem.Role
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Role"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@SpecAct], DataSourceInfo.MaxLength, "Role")
+            Required: =false
+            Update: =DataCardValue7_3.Text
+            Width: =455
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey7_3 As label:
+                AutoHeight: =true
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(56, 96, 178, 1)
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7_3 As text:
+                Align: =Align.Center
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: ="SC"
+                DelayOutput: =true
+                DisplayMode: =DisplayMode.View
+                Height: =110
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =395
+                X: =30
+                Y: =DataCardKey7_3.Y + DataCardKey7_3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7_3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7_3.Y + DataCardValue7_3.Height
+                ZIndex: =3
+
+            StarVisible7_3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_3.Y
+                ZIndex: =4
+
+        Status_DataCard2_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Status"
+            Default: =ThisItem.Status
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Status"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@SpecAct], DataSourceInfo.MaxLength, "Status")
+            Required: =false
+            Update: =DataCardValue8_3.Text
+            Visible: =false
+            Width: =455
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey8_3 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8_3 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: ="wait"
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8_3.Y + DataCardKey8_3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage8_3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue8_3.Y + DataCardValue8_3.Height
+                ZIndex: =3
+
+            StarVisible8_3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey8_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8_3.Y
+                ZIndex: =4
+
+    Button3_3 As button:
+        Fill: =RGBA(153, 160, 196, 1)
+        Height: =93
+        HoverColor: =Black
+        HoverFill: =DarkRed
+        OnSelect: =SubmitForm(SCFORM) & Navigate(END)
+        Text: ="Подписать кровью"
+        Width: =1366
+        Y: =547
+        ZIndex: =6
+
+    Label17_6 As label:
+        Fill: =RGBA(186, 237, 114, 1)
+        Height: =33
+        Text: ="Поддержка приложения 'Распределяющая шляпа', прекращена, а его функциональность ограничена.  С уважением Ru CSC PA Team"
+        Width: =1159
+        X: =207
+        Y: =735
+        ZIndex: =7
+

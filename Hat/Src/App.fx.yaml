@@ -1,0 +1,5 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: =Set(passvis,0) & NewForm(Form1) 
+    StartScreen: =
+

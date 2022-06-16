@@ -1,0 +1,91 @@
+Error As screen:
+    BackgroundImage: =
+
+    Label11 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =188
+        Size: =24
+        Text: ="Привет! Приложение пренадлежит 014CSC. По всем вопросам можно обратиться к vladislav.stupak@ingka.ikea.com. Спасибо за ваш интерес."
+        Width: =1305
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Label12 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =128
+        Size: =24
+        Text: ="Hi! The application belongs to 014CSC. For all questions, you can contact vladislav.stupak@ingka.ikea.com . Thank you for your interest..."
+        Width: =1305
+        X: =40
+        Y: =211
+        ZIndex: =2
+
+    Image2 As image:
+        Height: =182
+        Image: =YellowHeart
+        OnSelect: =Set(passvis,1)
+        Width: =386
+        X: =953
+        Y: =470
+        ZIndex: =3
+
+    Label13 As label:
+        FontWeight: =FontWeight.Bold
+        Text: ="prod.vlstu Customer Support Centre Russia"
+        Width: =439
+        X: =927
+        Y: =660
+        ZIndex: =4
+
+    Label14 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =43
+        Size: =18
+        Text: ="Admin menu. Please enter your password"
+        Visible: =If(passvis = 1, true, false)
+        Width: =542
+        X: =309
+        Y: =470
+        ZIndex: =8
+
+    Admin_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        password_2 As text:
+            Default: ="Текстовое поле"
+            Visible: =If(passvis = 1, true, false)
+            X: =351
+            Y: =576
+            ZIndex: =5
+
+        Button2_5 As button:
+            OnSelect: =Set(passvis , 0)
+            Text: ="Скрыть"
+            Visible: =If(passvis = 1, true, false)
+            X: =703
+            Y: =604
+            ZIndex: =6
+
+        Button2_4 As button:
+            OnSelect: =Set(pass, password_2.Text) & If(pass = "reso", Navigate(Итог) & Notify("Привет! Путник твой пароль принят <3",NotificationType.Success,2000), Notify("Ошибка! За тобой уже выехали!",NotificationType.Warning,2000))
+            Text: ="Ввод"
+            Visible: =If(passvis = 1, true, false)
+            X: =703
+            Y: =552
+            ZIndex: =7
+
+    Label17_8 As label:
+        Fill: =RGBA(186, 237, 114, 1)
+        Height: =63
+        Text: |-
+            ="Поддержка приложения 'Распределяющая шляпа', прекращена, а его функциональность ограничена.  С уважением Ru CSC PA Team
+            Support for the app 'Distributing Hat' has been discontinued, and its functionality is limited. Sincerely Ru CSC PA Team"
+        Width: =1159
+        Y: =705
+        ZIndex: =10
+

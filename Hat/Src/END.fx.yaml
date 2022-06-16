@@ -1,0 +1,64 @@
+END As screen:
+    BackgroundImage: =PH173199
+    ImagePosition: =ImagePosition.Center
+
+    Label10 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(255, 191, 0, 1)
+        Fill: =RGBA(255, 191, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =96
+        Size: =48
+        Text: ="Спасибо за твой выбор!"
+        Width: =1366
+        Y: =33
+        ZIndex: =1
+
+    Label2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =196
+        Size: =100
+        Text: =LookUp(SpecAct,Name = User().FullName,Role)
+        Width: =698
+        X: =305
+        Y: =268
+        ZIndex: =2
+
+    Label4 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 191, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =75
+        Size: =18
+        Text: ="Для смены активности обратись к своему TL"
+        Width: =587
+        X: =777
+        Y: =693
+        ZIndex: =3
+
+    Image3 As image:
+        Height: =166
+        Image: =BlackHeart
+        Width: =185
+        X: =1181
+        ZIndex: =4
+
+    vlstu_2 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Text: ="prod. vlstu"
+        Width: =131
+        X: =1181
+        Y: =166
+        ZIndex: =5
+
+    Label17_7 As label:
+        Fill: =RGBA(186, 237, 114, 1)
+        Height: =33
+        Text: ="Поддержка приложения 'Распределяющая шляпа', прекращена, а его функциональность ограничена.  С уважением Ru CSC PA Team"
+        Width: =1159
+        ZIndex: =6
+

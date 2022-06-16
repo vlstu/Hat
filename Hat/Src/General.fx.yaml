@@ -1,0 +1,197 @@
+General As screen:
+    Fill: =DeepSkyBlue
+    ImagePosition: =ImagePosition.Fill
+
+    VIC_1 As button:
+        Height: =54
+        HoverBorderColor: =Gold
+        HoverColor: =DarkGoldenRod
+        OnSelect: =If(LookUp(SpecAct,Name = User().FullName ,Role) = "VIC" Or "Claims" Or "SC" Or "B2B" , Navigate(END), NewForm(VICFORM) & Navigate(VIC,ScreenTransition.Fade))
+        Text: ="VIC"
+        Width: =261
+        Y: =234
+        ZIndex: =1
+
+    B2B_1 As button:
+        DisplayMode: =If(CountIf(SpecAct, Status = "wait" And Role = "B2B") >= 10, Disabled,Edit)
+        Height: =54
+        HoverBorderColor: =Gold
+        HoverColor: =DarkGoldenRod
+        OnSelect: =If(LookUp(SpecAct,Name = User().FullName ,Role) = "VIC" Or "Claims" Or "SC" Or "B2B" , Navigate(END), NewForm(B2BFORM) & Navigate(B2B,ScreenTransition.Fade))
+        Text: ="B2B"
+        Width: =261
+        Y: =307
+        ZIndex: =2
+
+    Claims_1 As button:
+        DisplayMode: =If(CountIf(SpecAct, Status = "wait" And Role = "Claims") >=15,DisplayMode.Disabled,Edit)
+        Height: =54
+        HoverBorderColor: =Gold
+        HoverColor: =DarkGoldenRod
+        OnSelect: |
+            =If(LookUp(SpecAct,Name = User().FullName ,Role) = "VIC" Or "Claims" Or "SC" Or "B2B" , Navigate(END), NewForm(CLAIMSFORM) & Navigate(Claims,ScreenTransition.Fade))
+        Text: ="Claims"
+        Width: =261
+        Y: =380
+        ZIndex: =3
+
+    SC_1 As button:
+        DisplayMode: =If(CountIf(SpecAct, Status = "wait" And Role = "SC")>=10,Disabled,Edit)
+        Height: =54
+        HoverBorderColor: =Gold
+        HoverColor: =DarkGoldenRod
+        OnSelect: |
+            =If(LookUp(SpecAct,Name = User().FullName ,Role) = "VIC" Or "Claims" Or "SC" Or "B2B" , Navigate(END), NewForm(SCFORM) & Navigate(SC,ScreenTransition.Fade))
+        Text: ="SC"
+        Width: =261
+        Y: =458
+        ZIndex: =4
+
+    Random As button:
+        Height: =58
+        HoverBorderColor: =Gold
+        HoverColor: =DarkGoldenRod
+        HoverFill: =Black
+        OnSelect: =Navigate(Nicht,ScreenTransition.Fade) & Set(info,1)
+        Text: ="Я не знаю..."
+        Tooltip: ="Проверь свою удачу"
+        Width: =261
+        Y: =536
+        ZIndex: =5
+
+    Vault As image:
+        DisabledFill: =Blue
+        Fill: =DeepSkyBlue
+        Height: =160
+        Image: =YellowHeart
+        OnSelect: =Set(passvis,1)
+        PaddingLeft: =10
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =1
+        RadiusTopLeft: =10
+        RadiusTopRight: =1
+        Width: =232
+        X: =1132
+        ZIndex: =6
+
+    vlstu As label:
+        FontWeight: =FontWeight.Bold
+        Height: =28
+        Text: ="prod. vlstu"
+        Width: =158
+        X: =1119
+        Y: =160
+        ZIndex: =7
+
+    Promise As label:
+        Font: =Font.Arial
+        Height: =508
+        Size: =20
+        Text: |-
+            ="С кем учиться вам суждено. Быть может, вас ждет B2B, Славный тем, что учатся там храбрецы. Сердца их отваги и силы полны, К тому ж благородны они.
+            
+            А может быть, VIC ваша судьба, Там, где никто не боится труда, Где преданны все, и верны, И терпенья с упорством полны.
+            
+            А если с мозгами в порядке у вас, Вас к знаниям тянет давно, Есть юмор и силы гранит грызть наук, То путь ваш - за стол СЦ.
+            
+            Быть может, что в Claims вам суждено Найти своих лучших друзей. Там хитрецы к своей цели идут, Никаких не стесняясь путей.
+            
+            
+            "
+        Width: =835
+        X: =530
+        Y: =200
+        ZIndex: =8
+
+    Label3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =86
+        Size: =28
+        Text: ="Сделай свой выбор!"
+        Width: =818
+        X: =261
+        Y: =33
+        ZIndex: =10
+
+    Label6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        Text: |-
+            ="Очередь:" & " " & CountIf(SpecAct, Status = "wait" And Role = "VIC")
+        Width: =128
+        X: =261
+        Y: =234
+        ZIndex: =11
+
+    Label6_1 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        Text: |-
+            ="Очередь:" & " " & CountIf(SpecAct, Status = "wait" And Role = "B2B")
+        Width: =128
+        X: =261
+        Y: =309
+        ZIndex: =12
+
+    Label6_2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        Text: |-
+            ="Очередь:" & " " & CountIf(SpecAct, Status = "wait" And Role = "Claims")
+        Width: =128
+        X: =261
+        Y: =380
+        ZIndex: =13
+
+    Label6_3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        Text: |-
+            ="Очередь:" & " " & CountIf(SpecAct, Status = "wait" And Role = "SC")
+        Width: =128
+        X: =261
+        Y: =458
+        ZIndex: =14
+
+    Label17 As label:
+        Fill: =RGBA(186, 237, 114, 1)
+        Height: =33
+        Text: ="Поддержка приложения 'Распределяющая шляпа', прекращена, а его функциональность ограничена.  С уважением Ru CSC PA Team"
+        Width: =1159
+        ZIndex: =18
+
+    Admin As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        password As text:
+            Default: ="Текстовое поле"
+            Visible: =If(passvis = 1, true, false)
+            X: =530
+            Y: =120
+            ZIndex: =15
+
+        Button2 As button:
+            OnSelect: =Set(passvis , 0)
+            Text: ="Скрыть"
+            Visible: =If(passvis = 1, true, false)
+            X: =882
+            Y: =148
+            ZIndex: =16
+
+        Button2_1 As button:
+            OnSelect: =Set(pass, password.Text) & If(pass = "reso", Navigate(Итог) & Notify("Привет! Путник твой пароль принят <3",NotificationType.Success,2000), Notify("Ошибка! За тобой уже выехали!",NotificationType.Warning,2000))
+            Text: ="Ввод"
+            Visible: =If(passvis = 1, true, false)
+            X: =882
+            Y: =96
+            ZIndex: =17
+

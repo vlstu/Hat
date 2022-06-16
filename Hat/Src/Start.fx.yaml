@@ -1,0 +1,54 @@
+Start As screen:
+    BackgroundImage: =PE070754
+    ImagePosition: =ImagePosition.Center
+
+    Button7 As button:
+        Height: =92
+        OnSelect: =If(ПользователиOffice365.MyProfileV2().country = "Russian Federation" || ПользователиOffice365.MyProfileV2().officeLocation = "Store Samara 442",Navigate(General),Navigate(Error)) 
+        Text: ="Выбери свой путь!"
+        Width: =522
+        X: =435
+        Y: =648
+        ZIndex: =1
+
+    Label1 As label:
+        Height: =28
+        Text: ="*Тут мог быть Поттер, но его забанили за авторские права"
+        Width: =530
+        Y: =740
+        ZIndex: =2
+
+    Label8 As label:
+        Height: =198
+        Size: =38
+        Text: |-
+            ="-Что же нам нужно для перехода на опытного?
+            -Сейчас узнаем!"
+        Width: =699
+        Y: =45
+        ZIndex: =3
+
+    Image4 As image:
+        Height: =114
+        Image: =BlackHeart
+        Width: =130
+        X: =1224
+        Y: =12
+        ZIndex: =4
+
+    vlstu_3 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =37
+        Text: ="prod. vlstu"
+        Width: =119
+        X: =1235
+        Y: =126
+        ZIndex: =5
+
+    Label17_1 As label:
+        Fill: =RGBA(186, 237, 114, 1)
+        Height: =33
+        Text: ="Поддержка приложения 'Распределяющая шляпа', прекращена, а его функциональность ограничена.  С уважением Ru CSC PA Team"
+        Width: =1159
+        ZIndex: =6
+

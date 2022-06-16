@@ -1,0 +1,104 @@
+Итог As screen:
+
+    VICE1 As label:
+        Text: ="anastasia.pavkina@ingka.ikea.com"
+        X: =278
+        Y: =84
+        ZIndex: =4
+
+    VICE2 As label:
+        Text: ="anastasiya.shcheglova@ingka.ikea.com"
+        X: =278
+        Y: =149
+        ZIndex: =5
+
+    VICE3 As label:
+        Text: ="denis.tyasto@ingka.ikea.com"
+        X: =278
+        Y: =214
+        ZIndex: =6
+
+    SCE1 As label:
+        Text: ="artyom.parshkov@ingka.ikea.com"
+        X: =518
+        Y: =84
+        ZIndex: =7
+
+    SCE2 As label:
+        Text: ="Текст"
+        X: =518
+        Y: =149
+        ZIndex: =8
+
+    SCE3 As label:
+        Text: ="Текст"
+        X: =518
+        Y: =214
+        ZIndex: =9
+
+    ClaimsE1 As label:
+        Text: ="Vladislav.stupak@ingka.ikea.com"
+        X: =752
+        Y: =74
+        ZIndex: =10
+
+    ClaimsE2 As label:
+        Height: =60
+        Text: ="anastasiya.magileva@ingka.ikea.com"
+        X: =752
+        Y: =134
+        ZIndex: =11
+
+    ClaimsE3 As label:
+        Text: ="mikhail.lovtsov@ingka.ikea.com"
+        X: =752
+        Y: =214
+        ZIndex: =12
+
+    B2BE1 As label:
+        Text: ="marina.lapshina@ingka.ikea.com"
+        X: =951
+        Y: =69
+        ZIndex: =13
+
+    B2BE2 As label:
+        Text: ="akim.gyarkin@ingka.ikea.com"
+        X: =951
+        Y: =134
+        ZIndex: =14
+
+    B2BE3 As label:
+        Text: ="mariya.gulik@ingka.ikea.com"
+        X: =951
+        Y: =214
+        ZIndex: =15
+
+    GLE1 As label:
+        Text: ="julia.mitkina@ingka.ikea.com"
+        X: =39
+        Y: =75
+        ZIndex: =16
+
+    Button5 As button:
+        OnSelect: =Navigate(General)
+        Text: ="На главную"
+        X: =18
+        Y: =696
+        ZIndex: =19
+
+    GLE1_1 As label:
+        Text: ="mariya.matveeva@ingka.ikea.com"
+        X: =39
+        Y: =142
+        ZIndex: =20
+
+    Button6 As button:
+        Height: =115
+        OnSelect: |-
+            =Launch("https://iweof.sharepoint.com/:x:/r/teams/o365g_cscresolutionmanagers_retruc02/_layouts/15/Doc.aspx?sourcedoc=%7BA7C481F7-667E-4D8C-BCE7-30C5C9C68272%7D&file=Hat.xlsx&action=default&mobileredirect=true&cid=87f24894-e4d2-404f-a15c-687d40121a5f",{},LaunchTarget.New)
+        Text: ="Ссылка на списки"
+        Width: =181
+        X: =18
+        Y: =504
+        ZIndex: =21
+
